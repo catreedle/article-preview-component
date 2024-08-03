@@ -63,8 +63,10 @@ body {
   color: var(--color-dark-grayish-blue);
 }
 
+/* card author */
 .card-footer {
   display: flex;
+  /* display: none; */
   justify-content: space-between;
 }
 
@@ -84,14 +86,18 @@ body {
 }
 
 .share {
-  inline-size: 2rem;
-  block-size: 2rem;
-  background-color: var(--color-light-blue);
-  padding: 0.75rem;
-  border-radius: 50%;
-  background-image: url("/images/icon-share.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  border-radius: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.share img {
+  width: 1.25rem;
 }
 
 .author-info img {
@@ -99,6 +105,7 @@ body {
   border-radius: 50%;
 }
 
+/* card share */
 .card-share {
   background-color: var(--color-dark-grayish-blue);
   margin: -2.5rem;
@@ -106,27 +113,29 @@ body {
   padding: 1rem 2rem;
   display: flex;
   display: none;
+  align-items: center;
   justify-content: space-between;
 }
 
 .card-share p {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  color: var(--color-dark-blue);
 }
 
 .card-share img {
-    inline-size: 1.25rem;
-    block-size: 1.25rem;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
 }
 
 .share-inline-start {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .share-inline-end {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .card-share p {
@@ -134,9 +143,5 @@ body {
 }
 
 .share-active {
-    background-color: var(--color-dark-blue);
-}
-
-.svg-share {
-    fill: white;
+  background-color: var(--color-dark-blue);
 }
