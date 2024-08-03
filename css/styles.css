@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  /* Colors */
+
+  --color-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(214, 17%, 51%);
+  --color-grayish-blue: hsl(212, 23%, 69%);
+  --color-light-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: var(--color-dark-blue);
+  background-color: var(--color-light-blue);
+  line-height: 1.5;
+}
+
+.card-container {
+  margin: 20% 10%;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.header-image {
+  inline-size: 100%;
+  block-size: 40%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.header-image img {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.preview {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preview h1 {
+  font-weight: 700;
+  color: var(--color-dark-grayish-blue);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  color: var(--color-dark-grayish-blue);
+  font-weight: 700;
+}
+
+.share {
+  inline-size: 2rem;
+  block-size: 2rem;
+  background-color: var(--color-light-blue);
+  padding: 0.75rem;
+  border-radius: 50%;
+  background-image: url("/images/icon-share.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.author-info img {
+  inline-size: 3rem;
+  border-radius: 50%;
+}
+
+.card-share {
+  background-color: var(--color-dark-grayish-blue);
+  margin: -2.5rem;
+  margin-top: 2.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+  display: none;
+  justify-content: space-between;
+}
+
+.card-share p {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5rem;
+}
+
+.card-share img {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+.share-inline-start {
+    display: flex;
+    gap: 1rem;
+}
+
+.share-inline-end {
+    align-self: flex-end;
+}
+
+.card-share p {
+  text-transform: uppercase;
+}
+
+.share-active {
+    background-color: var(--color-dark-blue);
+}
+
+.svg-share {
+    fill: white;
+}
