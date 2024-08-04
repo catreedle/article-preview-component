@@ -52,13 +52,14 @@ body {
 }
 
 .preview {
+  position: relative;
   display: flex;
   gap: 1rem;
   flex-direction: column;
 }
 
 .preview h1 {
-margin-block-start: 2.5rem;
+  margin-block-start: 2.5rem;
   margin-inline: 2.25rem;
   font-weight: 700;
   color: var(--color-dark-grayish-blue);
@@ -91,6 +92,13 @@ margin-block-start: 2.5rem;
   font-weight: 700;
 }
 
+#share-button {
+    z-index: 100;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+}
+
 .share {
   border-radius: 50px;
   width: 2.5rem;
@@ -115,8 +123,12 @@ button:hover {
 .card-share {
   background-color: var(--color-dark-grayish-blue);
   padding: 1.25rem 2.25rem;
-  display: flex;
   display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
   align-items: center;
   justify-content: space-between;
   border-bottom-left-radius: 1rem;
@@ -141,10 +153,6 @@ button:hover {
   gap: 1rem;
 }
 
-.share-inline-end {
-  align-self: flex-end;
-}
-
 .share-active {
   background-color: var(--color-dark-blue);
 }
@@ -165,6 +173,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(5 1fr);
     inline-size: 50%;
+    min-inline-size: 720px;
   }
 
   .header-image {
@@ -172,7 +181,6 @@ button:hover {
     aspect-ratio: 1;
     width: 100%;
     height: 100%;
-
     min-inline-size: 150px;
     margin: 0;
   }
@@ -180,10 +188,34 @@ button:hover {
   .header-image img {
     height: 100%;
     object-fit: cover;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 0;
   }
+
+  .card-share {
+    position: absolute;
+    bottom: 25%;
+    display: none;
+    left: 55%;
+    width: fit-content;
+    gap: 1rem;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+  }
+
+  .card-share::after {
+    content: "";
+    position: absolute;
+    bottom: -1.25rem; /* Adjust based on the size of the triangle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color-dark-grayish-blue) transparent transparent transparent; /* Matches the bubble background */
+}
+  
 
   .preview {
     grid-column: 3 / 5;
-    padding: 2.5rem;
   }
 }
