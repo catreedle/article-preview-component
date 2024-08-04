@@ -52,22 +52,28 @@ body {
 }
 
 .preview {
-  padding: 2.5rem;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .preview h1 {
+margin-block-start: 2.5rem;
+  margin-inline: 2.25rem;
   font-weight: 700;
   color: var(--color-dark-grayish-blue);
+}
+
+.preview p {
+  margin-inline: 2.25rem;
 }
 
 /* card author */
 .card-footer {
   display: flex;
-  /* display: none; */
+  margin: 1rem 2.25rem;
   justify-content: space-between;
+  justify-self: flex-end;
 }
 
 .author-info {
@@ -108,20 +114,21 @@ button:hover {
 /* card share */
 .card-share {
   background-color: var(--color-dark-grayish-blue);
-  margin: -2.5rem;
-  margin-top: 0.75rem;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.25rem;
   display: flex;
   display: none;
   align-items: center;
   justify-content: space-between;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
-.card-share p {
+.card-share span {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.25rem;
   color: var(--color-dark-blue);
+  text-transform: uppercase;
 }
 
 .card-share img {
@@ -136,10 +143,6 @@ button:hover {
 
 .share-inline-end {
   align-self: flex-end;
-}
-
-.card-share p {
-  text-transform: uppercase;
 }
 
 .share-active {
