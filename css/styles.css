@@ -93,10 +93,10 @@ body {
 }
 
 #share-button {
-    z-index: 100;
-    position: absolute;
-    bottom: 1rem;
-    right: 2rem;
+  z-index: 100;
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
 }
 
 .share {
@@ -133,6 +133,29 @@ button:hover {
   justify-content: space-between;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+
+  /* Animation */
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start off-screen */
+  animation: none; /* No animation initially */
+}
+
+/* Keyframe animation for sliding in and fading in */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* When the class `show` is added, the animation plays */
+.card-share.show {
+  display: flex; /* Ensure it is displayed as flex when shown */
+  animation: slideIn 0.5s ease-in-out forwards; /* Apply the animation */
 }
 
 .card-share span {
@@ -148,7 +171,7 @@ button:hover {
   block-size: 1.25rem;
 }
 
-.share-inline-start {
+.share-social-media {
   display: flex;
   gap: 1rem;
 }
@@ -199,7 +222,7 @@ button:hover {
     left: 55%;
     width: fit-content;
     gap: 1rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 1rem 2rem;
   }
 
@@ -211,9 +234,9 @@ button:hover {
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
-    border-color: var(--color-dark-grayish-blue) transparent transparent transparent; /* Matches the bubble background */
-}
-  
+    border-color: var(--color-dark-grayish-blue) transparent transparent
+      transparent; /* Matches the bubble background */
+  }
 
   .preview {
     grid-column: 3 / 5;
